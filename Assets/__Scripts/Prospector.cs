@@ -13,12 +13,14 @@ public class Prospector : MonoBehaviour
     [Header("Set in Inspector")]
 
     public TextAsset deckXML;
+    public TextAsset layoutXML;
 
 
 
     [Header("Set Dynamically")]
 
     public Deck deck;
+    public Layout layout;
 
 
 
@@ -42,16 +44,20 @@ public class Prospector : MonoBehaviour
 
 
 
-        Card c;
+        /* Card c;
 
-        for (int cNum = 0; cNum < deck.cards.Count; cNum++)
-        {                    // repositions cards to new shuffled order
+         for (int cNum = 0; cNum < deck.cards.Count; cNum++)
+         {                    // repositions cards to new shuffled order
 
-            c = deck.cards[cNum];
+             c = deck.cards[cNum];
 
-            c.transform.localPosition = new Vector3((cNum % 13) * 3, cNum / 13 * 4, 0);
+             c.transform.localPosition = new Vector3((cNum % 13) * 3, cNum / 13 * 4, 0);
 
-        }
+         }*/
+
+        layout = GetComponent<Layout>();  // Get the Layout component
+
+        layout.ReadLayout(layoutXML.text); // Pass LayoutXML to it
 
     }
 }
