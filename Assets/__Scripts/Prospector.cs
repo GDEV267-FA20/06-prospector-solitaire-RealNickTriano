@@ -38,5 +38,20 @@ public class Prospector : MonoBehaviour
 
         deck.InitDeck(deckXML.text); // Pass DeckXML to it
 
+        Deck.Shuffle(ref deck.cards); // This shuffles the deck by reference // a
+
+
+
+        Card c;
+
+        for (int cNum = 0; cNum < deck.cards.Count; cNum++)
+        {                    // repositions cards to new shuffled order
+
+            c = deck.cards[cNum];
+
+            c.transform.localPosition = new Vector3((cNum % 13) * 3, cNum / 13 * 4, 0);
+
+        }
+
     }
 }
