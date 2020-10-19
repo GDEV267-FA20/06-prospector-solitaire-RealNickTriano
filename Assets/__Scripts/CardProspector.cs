@@ -50,8 +50,8 @@ public class CardProspector : Card
         Prospector.S.CardClicked(this);
 
         // Also call the base class (Card.cs) version of this method
-
-        base.OnMouseUpAsButton();                                                  // a
+        // outputting selected card to console
+        base.OnMouseUpAsButton();                                                  
 
     }
 
