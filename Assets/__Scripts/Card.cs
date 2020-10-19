@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Card : MonoBehaviour
 {
+    
+
     [Header("Set Dynamically")]
 
     public string suit; // Suit of the Card (C,D,H, or S)
@@ -37,6 +39,7 @@ public class Card : MonoBehaviour
     public SpriteRenderer[] spriteRenderers;
 
 
+    
 
     void Start()
     {
@@ -166,6 +169,15 @@ public class Card : MonoBehaviour
         }
 
     }
+
+    // Virtual methods can be overridden by subclass methods with the same name
+
+    virtual public void OnMouseUpAsButton()
+    {
+
+        print(name); // When clicked, this outputs the card name
+
+    }
 }
 
 [System.Serializable] // A Serializable class is able to be edited in the Inspector
@@ -203,3 +215,7 @@ public class CardDefinition
     public List<Decorator> pips = new List<Decorator>(); // Pips used    // a
 
 }
+
+
+
+
