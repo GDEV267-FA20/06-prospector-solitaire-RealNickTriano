@@ -411,6 +411,8 @@ public class Prospector : MonoBehaviour
 
                 UpdateDrawPile();     // Restacks the drawPile
 
+                ScoreManager.EVENT(eScoreEvent.draw);
+
                 break;
 
 
@@ -450,6 +452,7 @@ public class Prospector : MonoBehaviour
                 tableau.Remove(cd); // Remove it from the tableau List
                 MoveToTarget(cd);  // Make it the target card
                 SetTableauFaces();  // Update tableau card face-ups
+                ScoreManager.EVENT(eScoreEvent.mine);
 
                 break;
 
@@ -521,13 +524,13 @@ public class Prospector : MonoBehaviour
         {
 
             print("Game Over. You won! :)");
-
+            ScoreManager.EVENT(eScoreEvent.gameWin);
         }
         else
         {
 
             print("Game Over. You Lost. :(");
-
+            ScoreManager.EVENT(eScoreEvent.gameLoss);
         }
 
         // Reload the scene, resetting the game

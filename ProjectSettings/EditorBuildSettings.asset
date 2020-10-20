@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/__Prospector_Scene_0.unity
+    path: Assets/Scenes/_Alternate Layout_.unity
     guid: e7876eae655084f8d9b344b33478f0fa
   m_configObjects: {}
