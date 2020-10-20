@@ -389,11 +389,11 @@ public class Prospector : MonoBehaviour
 
         cd.transform.localPosition = new Vector3(
 
-            layout.multiplier.x * layout.discardPile.x,
+            layout.multiplier.x * layout.target.x,
 
-            layout.multiplier.y * layout.discardPile.y,
+            layout.multiplier.y * layout.target.y,
 
-            -layout.discardPile.layerID);
+            -layout.target.layerID);
 
 
 
