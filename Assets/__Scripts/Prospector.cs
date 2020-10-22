@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using UnityEngine;
 using UnityEngine.SceneManagement;      
 using UnityEngine.UI;
@@ -40,6 +41,7 @@ public class Prospector : MonoBehaviour
     public List<CardProspector> tableau;
     public List<CardProspector> discardPile;
     public FloatingScore fsRun;
+    public int lastDiscard;
 
 
     void Awake()
@@ -338,24 +340,28 @@ public class Prospector : MonoBehaviour
         // Set the state of the card to discard
 
         cd.state = eCardState.discard;
-
+        
         discardPile.Add(cd); // Add it to the discardPile List<>
 
         cd.transform.parent = layoutAnchor; // Update its transform parent
 
+        foreach (CardProspector cd1 in discardPile)
+        {
+            lastDiscard = discardPile.IndexOf(cd1);
+        }
 
 
 
+            // Position this card on the discardPile
 
-        // Position this card on the discardPile
+            cd.transform.localPosition = new Vector3(
 
-        cd.transform.localPosition = new Vector3(
-
-            layout.multiplier.x * layout.discardPile.x,
+            layout.multiplier.x * layout.discardPile.x + lastDiscard * 0.15f,
 
             layout.multiplier.y * layout.discardPile.y,
 
             -layout.discardPile.layerID + 0.5f);
+        
 
         cd.faceUp = true;
 

@@ -29,6 +29,8 @@ public class SlotDef
 
     public Vector2 stagger;
 
+    
+
 }
 
 
@@ -120,6 +122,7 @@ public class Layout : MonoBehaviour
             tSD.y = float.Parse(slotsX[i].att("y"));
 
             tSD.layerID = int.Parse(slotsX[i].att("layer"));
+            
 
             // This converts the number of the layerID into a text layerName
 
@@ -174,7 +177,7 @@ public class Layout : MonoBehaviour
 
                 case "target":
 
-                    discardPile = tSD;
+                    target = tSD;
 
                     break;
 
